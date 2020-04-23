@@ -17,9 +17,6 @@ import { Col, Row, Grid } from "react-native-easy-grid";
 import Logo from "../../assets/logo.png";
 import bg from "../../assets/bg.jpg";
 
-//Extra views
-import WebViewScreen from "./WebViewScreen.js";
-
 const WelcomeScreen = ({ navigation }) => {
   return (
     <>
@@ -31,28 +28,34 @@ const WelcomeScreen = ({ navigation }) => {
         <ScrollView style={styles.scrollView} indicatorStyle="white">
           <View style={styles.messageView}>
             <Text style={styles.messageText}>
-              Welcome to our volunteer portal. Please choose an option from
-              below
+              Welcome to our volunteer app. Please choose an option from below
             </Text>
           </View>
 
           <Grid style={styles.grid}>
             <Col style={styles.col}>
-              <Text style={styles.messageText}>Administration</Text>
-              <Text style={styles.subtitle}>
-                Find evaluation forms, accident forms etc.
-              </Text>
+              <TouchableOpacity onPress={() => navigation.navigate("Admin")}>
+                <Text style={styles.messageText}>Administration</Text>
+                <Text style={styles.subtitle}>
+                  Find evaluation forms, accident forms etc.
+                </Text>
+              </TouchableOpacity>
             </Col>
             <Col style={[styles.col, styles.blue]}>
-              <Text style={styles.messageText}>Safeguarding</Text>
-              <Text style={styles.subtitle}>
-                Important information about our policies and referral procedures
-              </Text>
+              <TouchableOpacity
+                onPress={() => navigation.navigate("Safeguarding")}
+              >
+                <Text style={styles.messageText}>Safeguarding</Text>
+                <Text style={styles.subtitle}>
+                  Important information about our policies and referral
+                  procedures
+                </Text>
+              </TouchableOpacity>
             </Col>
           </Grid>
           <Grid style={styles.grid}>
             <Col style={[styles.col, styles.blue]}>
-              <TouchableOpacity onPress={() => navigation.navigate("WebView")}>
+              <TouchableOpacity onPress={() => navigation.navigate("Training")}>
                 <Text style={styles.messageText}>Training</Text>
                 <Text style={styles.subtitle}>
                   Find out about our upcoming training
@@ -61,10 +64,12 @@ const WelcomeScreen = ({ navigation }) => {
             </Col>
 
             <Col style={styles.col}>
-              <Text style={styles.messageText}>Useful Links</Text>
-              <Text style={styles.subtitle}>
-                Areas to develop your thinking
-              </Text>
+              <TouchableOpacity onPress={() => navigation.navigate("Links")}>
+                <Text style={styles.messageText}>Useful Links</Text>
+                <Text style={styles.subtitle}>
+                  Areas to develop your thinking
+                </Text>
+              </TouchableOpacity>
             </Col>
           </Grid>
         </ScrollView>

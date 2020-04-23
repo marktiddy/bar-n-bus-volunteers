@@ -62,6 +62,8 @@ const SignInScreen = ({ validated }) => {
             placeholder={username}
             style={styles.input}
             onChangeText={(text) => setUsername(text)}
+            autoCapitalize="none"
+            autoCorrect={false}
           />
           {usernameError ? (
             <Text style={styles.error}>Username is incorrect</Text>
@@ -72,6 +74,8 @@ const SignInScreen = ({ validated }) => {
             secureTextEntry={true}
             style={styles.input}
             onChangeText={(text) => setPassword(text)}
+            autoCapitalize="none"
+            autoCorrect={false}
           />
           {passwordError ? (
             <Text style={styles.error}>Password is incorrect</Text>

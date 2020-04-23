@@ -8,6 +8,10 @@ import { createStackNavigator } from "@react-navigation/stack";
 import SignInScreen from "./components/screens/SignInScreen";
 import WelcomeScreen from "./components/screens/WelcomeScreen";
 import WebViewScreen from "./components/screens/WebViewScreen.js";
+import AdminScreen from "./components/screens/AdminScreen";
+import SafeguardingScreen from "./components/screens/SafeguardingScreen";
+import TrainingScreen from "./components/screens/TrainingScreen";
+import LinkScreen from "./components/screens/LinkScreen";
 
 //Create our stack
 const Stack = createStackNavigator();
@@ -27,6 +31,8 @@ const App = ({ navigation }) => {
 
   return (
     <NavigationContainer>
+      <StatusBar barStyle="dark-content" />
+
       <Stack.Navigator>
         {screen == "LOGIN" ? (
           <Stack.Screen name="SignIn" options={{ headerShown: false }}>
@@ -42,8 +48,28 @@ const App = ({ navigation }) => {
           />
         )}
         <Stack.Screen name="WebView" options={{ title: "" }}>
-          {(props) => <WebViewScreen showUrl="http://www.google.co.uk" />}
+          {(showUrl) => <WebViewScreen showUrl={showUrl} />}
         </Stack.Screen>
+        <Stack.Screen
+          name="Admin"
+          component={AdminScreen}
+          options={{ title: "" }}
+        />
+        <Stack.Screen
+          name="Safeguarding"
+          component={SafeguardingScreen}
+          options={{ title: "" }}
+        />
+        <Stack.Screen
+          name="Training"
+          component={TrainingScreen}
+          options={{ title: "" }}
+        />
+        <Stack.Screen
+          name="Links"
+          component={LinkScreen}
+          options={{ title: "" }}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
