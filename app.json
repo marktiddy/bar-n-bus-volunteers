@@ -1,27 +1,25 @@
 {
   "expo": {
-    "name": "bar-n-bus-volunteers",
+    "name": "Volunteer Hub",
     "slug": "bar-n-bus-volunteers",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
+    "platforms": ["ios", "android", "web"],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./appicon.png",
+
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./appicon.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": [
-      "**/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
+
     "ios": {
+      "bundleIdentifier": "com.mrtmedia.bar-n-bus-volunteers",
+      "buildNumber": "1.0.0",
       "supportsTablet": true
     }
   }
