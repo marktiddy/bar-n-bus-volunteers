@@ -1,5 +1,5 @@
-import React from "react";
-import { Linking } from "expo";
+import React from 'react';
+import { Linking } from 'expo';
 import {
   View,
   StyleSheet,
@@ -9,21 +9,21 @@ import {
   Image,
   ImageBackground,
   TouchableOpacity,
-} from "react-native";
+} from 'react-native';
 
-import { Col, Grid } from "react-native-easy-grid";
+import { Col, Grid } from 'react-native-easy-grid';
 
 //Images
-import Logo from "../../assets/logo.png";
-import bg from "../../assets/bg.jpg";
+import Logo from '../../assets/logo.png';
+import bg from '../../assets/bg.jpg';
 
 const SafeguardingScreen = ({ navigation }) => {
   //function to open links
   const openLink = (link, type) => {
-    if (type === "email") {
+    if (type === 'email') {
       const url = `mailto:${link}`;
       Linking.openURL(url);
-    } else if (type === "tel") {
+    } else if (type === 'tel') {
       const url = `tel:${link}`;
       Linking.openURL(url);
     }
@@ -48,9 +48,9 @@ const SafeguardingScreen = ({ navigation }) => {
             <Col style={styles.col}>
               <TouchableOpacity
                 onPress={() =>
-                  navigation.navigate("WebView", {
+                  navigation.navigate('WebView', {
                     showUrl:
-                      "http://www.barnbus.org.uk/safeguarding-policy-doc",
+                      'http://www.barnbus.org.uk/safeguarding-policy-doc',
                   })
                 }
               >
@@ -60,28 +60,50 @@ const SafeguardingScreen = ({ navigation }) => {
                 </Text>
               </TouchableOpacity>
             </Col>
+            
             <Col style={[styles.col, styles.blue]}>
+             <TouchableOpacity
+                onPress={() =>
+                  navigation.navigate('WebView', {
+                    showUrl:
+                      'http://barnbus.org.uk/safeguarding-flowchart',
+                  })
+                }
+              >
               <Text style={styles.messageText}>
-                Safeguarding Procedure Summary
+                Safeguarding Procedure Flowchart
               </Text>
-              <Text style={styles.subtitle}>Coming soon.</Text>
+              <Text style={styles.subtitle}>A flow chart to help you know what you should do.</Text>
+              </TouchableOpacity>
             </Col>
           </Grid>
-          <View style={[styles.messageView, styles.blue]}>
-            <Text style={styles.messageText}>Concern Form (coming soon)</Text>
-          </View>
+
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate('WebView', {
+                showUrl: 'http://barnbus.org.uk/safeguarding-concern-form',
+              })
+            }
+          >
+            <View style={[styles.messageView, styles.blue]}>
+              <Text style={styles.messageText}>Concern Form</Text>
+              <Text style={styles.subtitle}>
+                Use this form to report safeguarding concerns.
+              </Text>
+            </View>
+          </TouchableOpacity>
           <View style={styles.messageView}>
             <Text style={styles.messageText}>
               Safeguarding Lead - Jamie Sawtell (CEO)
             </Text>
             <View style={styles.spacer} />
-            <TouchableOpacity onPress={() => openLink("+447935222113", "tel")}>
+            <TouchableOpacity onPress={() => openLink('+447935222113', 'tel')}>
               <View style={styles.button}>
                 <Text style={styles.buttonText}>Call: 07935 222 113</Text>
               </View>
             </TouchableOpacity>
             <TouchableOpacity
-              onPress={() => openLink("ceo@barnbus.org.uk", "email")}
+              onPress={() => openLink('ceo@barnbus.org.uk', 'email')}
             >
               <View style={styles.button}>
                 <Text style={styles.buttonText}>Email: ceo@barnbus.org.uk</Text>
@@ -90,7 +112,7 @@ const SafeguardingScreen = ({ navigation }) => {
             <Text style={styles.subtitle}>
               If Jamie is unavailable call the Children and Families Hub
             </Text>
-            <TouchableOpacity onPress={() => openLink("+443456037627", "tel")}>
+            <TouchableOpacity onPress={() => openLink('+443456037627', 'tel')}>
               <View style={styles.button}>
                 <Text style={styles.buttonText}>Tel: 0345 603 7627</Text>
               </View>
@@ -108,16 +130,16 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 0.8,
-    color: "white",
-    justifyContent: "center",
-    alignContent: "center",
+    color: 'white',
+    justifyContent: 'center',
+    alignContent: 'center',
   },
   title: {
     flex: 0.15,
-    width: "100%",
-    alignContent: "center",
-    justifyContent: "flex-end",
-    backgroundColor: "white",
+    width: '100%',
+    alignContent: 'center',
+    justifyContent: 'flex-end',
+    backgroundColor: 'white',
   },
   topImg: {
     height: undefined,
@@ -127,32 +149,32 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   messageView: {
-    backgroundColor: "#4b4385",
-    color: "white",
+    backgroundColor: '#4b4385',
+    color: 'white',
     padding: 7,
     marginTop: 15,
     marginHorizontal: 15,
     borderRadius: 5,
     paddingVertical: 20,
     opacity: 0.95,
-    justifyContent: "center",
+    justifyContent: 'center',
   },
   messageText: {
-    color: "white",
+    color: 'white',
     fontSize: 18,
-    textAlign: "center",
-    fontWeight: "300",
+    textAlign: 'center',
+    fontWeight: '300',
   },
   subtitle: {
-    color: "white",
+    color: 'white',
     fontSize: 14,
-    textAlign: "center",
-    fontWeight: "300",
+    textAlign: 'center',
+    fontWeight: '300',
     paddingTop: 5,
-    fontStyle: "italic",
+    fontStyle: 'italic',
   },
   blue: {
-    backgroundColor: "#48a1d7",
+    backgroundColor: '#48a1d7',
   },
   bgImg: {
     flex: 1,
@@ -162,13 +184,13 @@ const styles = StyleSheet.create({
     marginBottom: -20,
   },
   col: {
-    backgroundColor: "#4b4385",
-    color: "white",
+    backgroundColor: '#4b4385',
+    color: 'white',
     marginHorizontal: 15,
     borderRadius: 5,
     padding: 5,
-    alignContent: "center",
-    justifyContent: "center",
+    alignContent: 'center',
+    justifyContent: 'center',
     marginBottom: 20,
     height: 150,
   },
@@ -179,13 +201,13 @@ const styles = StyleSheet.create({
     marginHorizontal: 5,
     marginVertical: 5,
     padding: 5,
-    backgroundColor: "white",
+    backgroundColor: 'white',
     borderRadius: 5,
   },
   buttonText: {
-    color: "#4b4385",
-    textAlign: "center",
-    fontWeight: "500",
+    color: '#4b4385',
+    textAlign: 'center',
+    fontWeight: '500',
   },
 });
 

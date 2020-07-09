@@ -5,22 +5,24 @@
     "platforms": ["ios", "android", "web"],
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./appicon.png",
-
+    "icon": "./assets/icon.png",
     "splash": {
-      "image": "./appicon.png",
+      "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
     },
-    "assetBundlePatterns": ["**/*"],
-
+    "assetBundlePatterns": ["**/*", "./assets/*", "./node_modules/*"],
     "ios": {
-      "bundleIdentifier": "com.mrtmedia.bar-n-bus-volunteers",
+      "bundleIdentifier": "com.mtmedia.barnbusvolunteers",
       "buildNumber": "1.0.0",
       "supportsTablet": true
+    },
+    "android": {
+      "package": "com.mtmedia.barnbusvolunteers",
+      "versionCode": 6
     }
   }
 }

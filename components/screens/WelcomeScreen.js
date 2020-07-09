@@ -145,7 +145,7 @@ const styles = StyleSheet.create({
   },
   blue: {
     backgroundColor: "#48a1d7",
-  },
+  }
 });
 
 export default WelcomeScreen;
