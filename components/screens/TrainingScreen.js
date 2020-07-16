@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState } from 'react';
 import {
   View,
   StyleSheet,
@@ -8,26 +8,30 @@ import {
   Image,
   ImageBackground,
   TouchableOpacity,
-} from "react-native";
+} from 'react-native';
 
-import { eventbriteKey } from "../../assets/keys";
+import { eventbriteKey } from '../../assets/keys';
 
-import EventItem from "../EventItem";
+import EventItem from '../EventItem';
 
 //Images
-import Logo from "../../assets/logo.png";
-import bg from "../../assets/bg.jpg";
+import Logo from '../../assets/logo.png';
+import bg from '../../assets/bg.jpg';
 
 const TrainingScreen = ({ navigation }) => {
   const [events, setEvents] = useState([]);
 
   useEffect(() => {
     //Try our api call again
+    //Old URL - https://www.eventbriteapi.com/v3/users/me/events/
 
-    fetch("https://www.eventbriteapi.com/v3/users/me/events/", {
-      method: "GET",
-      headers: { Authorization: `Bearer ${eventbriteKey}` },
-    })
+    fetch(
+      'https://www.eventbriteapi.com/v3/organizations/297094611842/events/',
+      {
+        method: 'GET',
+        headers: { Authorization: `Bearer ${eventbriteKey}` },
+      }
+    )
       .then((response) => response.json())
       .then((json) => {
         setEvents(json.events);
@@ -36,7 +40,7 @@ const TrainingScreen = ({ navigation }) => {
 
   //Nav function
   const navFunction = (url) => {
-    navigation.navigate("WebView", {
+    navigation.navigate('WebView', {
       showUrl: url,
     });
   };
@@ -72,22 +76,22 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 0.8,
-    color: "white",
-    justifyContent: "center",
-    alignContent: "center",
+    color: 'white',
+    justifyContent: 'center',
+    alignContent: 'center',
   },
   title: {
     flex: 0.15,
-    width: "100%",
-    alignContent: "center",
-    justifyContent: "flex-end",
-    backgroundColor: "white",
+    width: '100%',
+    alignContent: 'center',
+    justifyContent: 'flex-end',
+    backgroundColor: 'white',
   },
   messageText: {
-    color: "white",
+    color: 'white',
     fontSize: 18,
-    textAlign: "center",
-    fontWeight: "300",
+    textAlign: 'center',
+    fontWeight: '300',
   },
   topImg: {
     height: undefined,
@@ -97,14 +101,14 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   messageView: {
-    backgroundColor: "#4b4385",
-    color: "white",
+    backgroundColor: '#4b4385',
+    color: 'white',
     padding: 7,
     margin: 15,
     borderRadius: 5,
     paddingVertical: 20,
     opacity: 0.95,
-    justifyContent: "center",
+    justifyContent: 'center',
   },
 
   bgImg: {
