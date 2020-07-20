@@ -9,7 +9,7 @@ import {
   ImageBackground,
   TouchableOpacity,
 } from 'react-native';
-
+import * as Device from 'expo-device';
 import { eventbriteKey } from '../../assets/keys';
 
 import EventItem from '../EventItem';
@@ -20,7 +20,7 @@ import bg from '../../assets/bg.jpg';
 
 const TrainingScreen = ({ navigation }) => {
   const [events, setEvents] = useState([]);
-
+  const os = Device.osName;
   useEffect(() => {
     //Try our api call again
     //Old URL - https://www.eventbriteapi.com/v3/users/me/events/
@@ -47,7 +47,9 @@ const TrainingScreen = ({ navigation }) => {
 
   return (
     <>
-      <StatusBar barStyle="dark-content" />
+      <StatusBar
+        barStyle={`${os === 'Android' ? 'light-content' : 'dark-content'}`}
+      />
       <View style={styles.title}>
         <Image source={Logo} style={styles.topImg} />
       </View>

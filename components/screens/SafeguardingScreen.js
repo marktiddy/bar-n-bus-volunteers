@@ -12,12 +12,13 @@ import {
 } from 'react-native';
 
 import { Col, Grid } from 'react-native-easy-grid';
-
+import * as Device from 'expo-device';
 //Images
 import Logo from '../../assets/logo.png';
 import bg from '../../assets/bg.jpg';
 
 const SafeguardingScreen = ({ navigation }) => {
+  const os = Device.osName;
   //function to open links
   const openLink = (link, type) => {
     if (type === 'email') {
@@ -31,7 +32,9 @@ const SafeguardingScreen = ({ navigation }) => {
 
   return (
     <>
-      <StatusBar barStyle="dark-content" />
+      <StatusBar
+        barStyle={`${os === 'Android' ? 'light-content' : 'dark-content'}`}
+      />
       <View style={styles.title}>
         <Image source={Logo} style={styles.topImg} />
       </View>
@@ -60,20 +63,21 @@ const SafeguardingScreen = ({ navigation }) => {
                 </Text>
               </TouchableOpacity>
             </Col>
-            
+
             <Col style={[styles.col, styles.blue]}>
-             <TouchableOpacity
+              <TouchableOpacity
                 onPress={() =>
                   navigation.navigate('WebView', {
-                    showUrl:
-                      'http://barnbus.org.uk/safeguarding-flowchart',
+                    showUrl: 'http://barnbus.org.uk/safeguarding-flowchart',
                   })
                 }
               >
-              <Text style={styles.messageText}>
-                Safeguarding Procedure Flowchart
-              </Text>
-              <Text style={styles.subtitle}>A flow chart to help you know what you should do.</Text>
+                <Text style={styles.messageText}>
+                  Safeguarding Procedure Flowchart
+                </Text>
+                <Text style={styles.subtitle}>
+                  A flow chart to help you know what you should do.
+                </Text>
               </TouchableOpacity>
             </Col>
           </Grid>

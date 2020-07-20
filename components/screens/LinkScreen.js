@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 import {
   View,
   StyleSheet,
@@ -8,16 +8,19 @@ import {
   Image,
   ImageBackground,
   TouchableOpacity,
-} from "react-native";
-
+} from 'react-native';
+import * as Device from 'expo-device';
 //Images
-import Logo from "../../assets/logo.png";
-import bg from "../../assets/bg.jpg";
+import Logo from '../../assets/logo.png';
+import bg from '../../assets/bg.jpg';
 
 const LinkScreen = ({ navigation }) => {
+  const os = Device.osName;
   return (
     <>
-      <StatusBar barStyle="dark-content" />
+      <StatusBar
+        barStyle={`${os === 'Android' ? 'light-content' : 'dark-content'}`}
+      />
       <View style={styles.title}>
         <Image source={Logo} style={styles.topImg} />
       </View>
@@ -38,8 +41,8 @@ const LinkScreen = ({ navigation }) => {
             <View style={styles.spacer} />
             <TouchableOpacity
               onPress={() =>
-                navigation.navigate("WebView", {
-                  showUrl: "http://www.brook.org.uk",
+                navigation.navigate('WebView', {
+                  showUrl: 'http://www.brook.org.uk',
                 })
               }
             >
@@ -57,8 +60,8 @@ const LinkScreen = ({ navigation }) => {
             <View style={styles.spacer} />
             <TouchableOpacity
               onPress={() =>
-                navigation.navigate("WebView", {
-                  showUrl: "https://www.talktofrank.com",
+                navigation.navigate('WebView', {
+                  showUrl: 'https://www.talktofrank.com',
                 })
               }
             >
@@ -73,13 +76,13 @@ const LinkScreen = ({ navigation }) => {
           <View style={[styles.messageView, styles.blue]}>
             <Text style={styles.messageText}>Mind</Text>
             <Text style={styles.subtitle}>
-              Mental health information and support{" "}
+              Mental health information and support{' '}
             </Text>
             <View style={styles.spacer} />
             <TouchableOpacity
               onPress={() =>
-                navigation.navigate("WebView", {
-                  showUrl: "https://www.mind.org.uk",
+                navigation.navigate('WebView', {
+                  showUrl: 'https://www.mind.org.uk',
                 })
               }
             >
@@ -97,8 +100,8 @@ const LinkScreen = ({ navigation }) => {
             <View style={styles.spacer} />
             <TouchableOpacity
               onPress={() =>
-                navigation.navigate("WebView", {
-                  showUrl: "https://www.youthscape.co.uk",
+                navigation.navigate('WebView', {
+                  showUrl: 'https://www.youthscape.co.uk',
                 })
               }
             >
@@ -121,16 +124,16 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 0.8,
-    color: "white",
-    justifyContent: "center",
-    alignContent: "center",
+    color: 'white',
+    justifyContent: 'center',
+    alignContent: 'center',
   },
   title: {
     flex: 0.15,
-    width: "100%",
-    alignContent: "center",
-    justifyContent: "flex-end",
-    backgroundColor: "white",
+    width: '100%',
+    alignContent: 'center',
+    justifyContent: 'flex-end',
+    backgroundColor: 'white',
   },
   topImg: {
     height: undefined,
@@ -140,35 +143,35 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   messageView: {
-    backgroundColor: "#4b4385",
-    color: "white",
+    backgroundColor: '#4b4385',
+    color: 'white',
     padding: 7,
     marginTop: 15,
     marginHorizontal: 15,
     borderRadius: 5,
     paddingVertical: 20,
     opacity: 0.95,
-    justifyContent: "center",
+    justifyContent: 'center',
   },
   messageText: {
-    color: "white",
+    color: 'white',
     fontSize: 18,
-    textAlign: "center",
-    fontWeight: "300",
+    textAlign: 'center',
+    fontWeight: '300',
   },
   subtitle: {
-    color: "white",
+    color: 'white',
     fontSize: 14,
-    textAlign: "center",
-    fontWeight: "300",
+    textAlign: 'center',
+    fontWeight: '300',
     paddingTop: 5,
-    fontStyle: "italic",
+    fontStyle: 'italic',
   },
   blue: {
-    backgroundColor: "#48a1d7",
+    backgroundColor: '#48a1d7',
   },
   purpleText: {
-    color: "#4b4385",
+    color: '#4b4385',
   },
   bgImg: {
     flex: 1,
@@ -185,13 +188,13 @@ const styles = StyleSheet.create({
     marginHorizontal: 5,
     marginVertical: 5,
     padding: 5,
-    backgroundColor: "white",
+    backgroundColor: 'white',
     borderRadius: 5,
   },
   buttonText: {
-    color: "#48a1d7",
-    textAlign: "center",
-    fontWeight: "500",
+    color: '#48a1d7',
+    textAlign: 'center',
+    fontWeight: '500',
   },
 });
 

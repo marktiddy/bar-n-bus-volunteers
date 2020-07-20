@@ -9,7 +9,7 @@ import {
   ImageBackground,
   TouchableOpacity,
 } from 'react-native';
-
+import * as Device from 'expo-device';
 //Images
 import Logo from '../../assets/logo.png';
 import bg from '../../assets/bg.jpg';
@@ -17,9 +17,12 @@ import bg from '../../assets/bg.jpg';
 //Screen
 
 const AdminScreen = ({ navigation }) => {
+  const os = Device.osName;
   return (
     <>
-      <StatusBar barStyle="dark-content" />
+      <StatusBar
+        barStyle={`${os === 'Android' ? 'light-content' : 'dark-content'}`}
+      />
       <View style={styles.title}>
         <Image source={Logo} style={styles.topImg} />
       </View>
