@@ -8,6 +8,7 @@ import {
   Image,
   ImageBackground,
   TouchableOpacity,
+  ActivityIndicator,
 } from 'react-native';
 import * as Device from 'expo-device';
 import { eventbriteKey } from '../../assets/keys';
@@ -20,6 +21,7 @@ import bg from '../../assets/bg.jpg';
 
 const TrainingScreen = ({ navigation }) => {
   const [events, setEvents] = useState([]);
+  const [loading, setLoading] = useState(true);
   const os = Device.osName;
   useEffect(() => {
     //Try our api call again
@@ -35,6 +37,7 @@ const TrainingScreen = ({ navigation }) => {
       .then((response) => response.json())
       .then((json) => {
         setEvents(json.events);
+        setLoading(false);
       });
   }, []);
 
@@ -61,11 +64,15 @@ const TrainingScreen = ({ navigation }) => {
               training from here.
             </Text>
           </View>
-          {events
-            ? events.map((m) => (
-                <EventItem event={m} key={m.id} pressFunc={navFunction} />
-              ))
-            : null}
+          {!loading ? (
+            events.map((m) => (
+              <EventItem event={m} key={m.id} pressFunc={navFunction} />
+            ))
+          ) : (
+            <View style={[styles.messageView, styles.blue]}>
+              <ActivityIndicator size="large" color="#FFFFFF" />
+            </View>
+          )}
         </ScrollView>
       </ImageBackground>
     </>
@@ -115,6 +122,9 @@ const styles = StyleSheet.create({
 
   bgImg: {
     flex: 1,
+  },
+  blue: {
+    backgroundColor: '#48a1d7',
   },
 });
 

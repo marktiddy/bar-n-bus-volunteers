@@ -58,10 +58,10 @@ const WelcomeScreen = ({ navigation }) => {
           </Grid>
           <Grid style={styles.grid}>
             <Col style={[styles.col, styles.blue]}>
-              <TouchableOpacity onPress={() => navigation.navigate('Training')}>
-                <Text style={styles.messageText}>Training</Text>
+              <TouchableOpacity onPress={() => navigation.navigate('Team')}>
+                <Text style={styles.messageText}>Team Contacts</Text>
                 <Text style={styles.subtitle}>
-                  Find out about our upcoming training
+                  Details for contacting the Bar'N'Bus staff
                 </Text>
               </TouchableOpacity>
             </Col>
@@ -71,6 +71,17 @@ const WelcomeScreen = ({ navigation }) => {
                 <Text style={styles.messageText}>Useful Links</Text>
                 <Text style={styles.subtitle}>
                   Areas to develop your thinking
+                </Text>
+              </TouchableOpacity>
+            </Col>
+          </Grid>
+          <Grid style={styles.grid}>
+            <Col style={[styles.col, styles.blue, styles.colSm]}>
+              <TouchableOpacity onPress={() => navigation.navigate('Training')}>
+                <Text style={styles.messageText}>Upcoming Training</Text>
+                <Text style={styles.subtitle}>
+                  Find out about our upcoming training sessions and book your
+                  place
                 </Text>
               </TouchableOpacity>
             </Col>
@@ -145,6 +156,9 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     marginBottom: 20,
     height: 150,
+  },
+  colSm: {
+    height: 100,
   },
   blue: {
     backgroundColor: '#48a1d7',
