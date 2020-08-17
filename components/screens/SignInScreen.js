@@ -18,6 +18,7 @@ import * as Device from 'expo-device';
 //import images
 import Logo from '../../assets/logo.png';
 import bg from '../../assets/bg.jpg';
+console.log(user.password);
 
 const SignInScreen = ({ validated }) => {
   //Set up state
@@ -31,7 +32,7 @@ const SignInScreen = ({ validated }) => {
     const u = username.toLowerCase();
     const p = password.toLowerCase();
 
-    if (u == user.username && p == user.password) {
+    if (u == user.username && p.toUpperCase() == user.password) {
       //Store the logged in status
       SecureStore.setItemAsync('logged_in', 'yes');
       validated('WELCOME');
@@ -39,6 +40,7 @@ const SignInScreen = ({ validated }) => {
       //Set the display to show welcome
     } else {
       u != user.username ? setUsernameError(true) : setUsernameError(false);
+
       p != user.password ? setPasswordError(true) : setPasswordError(false);
     }
   };
