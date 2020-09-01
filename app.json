@@ -5,7 +5,7 @@
     "platforms": [
       "ios", "android", "web"
     ],
-    "version": "1.0.4",
+    "version": "1.0.5",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -21,12 +21,12 @@
     ],
     "ios": {
       "bundleIdentifier": "com.mtmedia.barnbusvolunteers",
-      "buildNumber": "1.0.4",
+      "buildNumber": "1.0.5",
       "supportsTablet": true
     },
     "android": {
       "package": "com.mtmedia.barnbusvolunteers",
-      "versionCode": 11
+      "versionCode": 13
     }
   }
 }
