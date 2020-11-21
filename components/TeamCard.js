@@ -18,6 +18,9 @@ const TeamCard = ({ image, name, email, role, tel, navigation }) => {
     <View style={[styles.teamMember, styles.blue]}>
       <View style={styles.teamMemberItem}>
         <Image source={image} style={styles.image} />
+        {name == 'Kim Radford' ? (
+          <Text style={styles.note}>(Note: This is Kim's personal number)</Text>
+        ) : null}
       </View>
       <View style={styles.teamMemberItemDetails}>
         <Text style={styles.subtitle}>{name}</Text>
@@ -105,6 +108,10 @@ const styles = StyleSheet.create({
   },
   blue: {
     backgroundColor: '#48a1d7',
+  },
+  note: {
+    color: 'white',
+    textAlign: 'center',
   },
 });
 

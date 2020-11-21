@@ -17,6 +17,8 @@ import Logo from '../../assets/logo.png';
 import bg from '../../assets/bg.jpg';
 import jamie from '../../assets/team/jamie.jpg';
 import aaron from '../../assets/team/aaron.jpg';
+import armand from '../../assets/team/armand.jpeg';
+import avatar from '../../assets/team/avatar.png';
 import TeamCard from '../TeamCard';
 
 const TeamScreen = ({ navigation }) => {
@@ -51,6 +53,20 @@ const TeamScreen = ({ navigation }) => {
             email="aaronwatts@barnbus.org.uk"
             tel="07935 222 112"
             role="Area Youth Development Worker, Castle Point and Rochford"
+          />
+          <TeamCard
+            image={armand}
+            name="Armand Kitoko"
+            email="armandkikoto@barnbus.org.uk"
+            tel="07999 018 710"
+            role="Area Youth Development Worker, Basildon"
+          />
+          <TeamCard
+            image={avatar}
+            name="Kim Radford"
+            email="kimradford@barnbus.org.uk"
+            tel=" 07930 649 118"
+            role="Mentoring Co-ordinator"
           />
         </ScrollView>
       </ImageBackground>
