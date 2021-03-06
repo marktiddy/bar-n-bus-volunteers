@@ -1,5 +1,5 @@
-import React from "react";
-import { View, StyleSheet, Text, TouchableOpacity } from "react-native";
+import React from 'react';
+import { View, StyleSheet, Text, TouchableOpacity } from 'react-native';
 
 const EventItem = ({ event, pressFunc }) => {
   //Check date
@@ -14,7 +14,7 @@ const EventItem = ({ event, pressFunc }) => {
   const dateString =
     eventDate.toLocaleString().slice(0, -6) +
     eventDate.toLocaleTimeString().slice(startSplit) +
-    " - " +
+    ' - ' +
     eventDateEnd.toLocaleTimeString().slice(0, -6) +
     eventDateEnd.toLocaleTimeString().slice(endSplit);
 
@@ -26,7 +26,7 @@ const EventItem = ({ event, pressFunc }) => {
       <View style={styles.eventContainer}>
         <Text style={styles.eventTitle}>{event.name.text}</Text>
         <Text style={styles.eventDate}>{dateString}</Text>
-        <Text style={styles.eventDescription}>{event.description.text}</Text>
+        <Text style={styles.eventDescription}>{event.summary}</Text>
         <TouchableOpacity onPress={() => pressFunc(event.url)}>
           <View style={styles.button}>
             <Text style={styles.buttonText}>
@@ -41,7 +41,7 @@ const EventItem = ({ event, pressFunc }) => {
 
 const styles = StyleSheet.create({
   eventContainer: {
-    backgroundColor: "#48a1d7",
+    backgroundColor: '#48a1d7',
     marginHorizontal: 15,
     marginVertical: 5,
     padding: 5,
@@ -50,36 +50,36 @@ const styles = StyleSheet.create({
   },
 
   eventTitle: {
-    color: "white",
+    color: 'white',
     fontSize: 16,
-    textAlign: "center",
+    textAlign: 'center',
     paddingBottom: 5,
-    fontWeight: "600",
+    fontWeight: '600',
   },
   eventDate: {
-    textAlign: "center",
+    textAlign: 'center',
     fontSize: 14,
-    color: "white",
+    color: 'white',
     paddingBottom: 5,
-    fontStyle: "italic",
+    fontStyle: 'italic',
   },
   eventDescription: {
-    color: "white",
+    color: 'white',
     fontSize: 14,
-    textAlign: "center",
+    textAlign: 'center',
     marginBottom: 5,
   },
   button: {
     marginHorizontal: 5,
     marginVertical: 5,
     padding: 5,
-    backgroundColor: "white",
+    backgroundColor: 'white',
     borderRadius: 5,
   },
   buttonText: {
-    color: "#48a1d7",
-    textAlign: "center",
-    fontWeight: "500",
+    color: '#48a1d7',
+    textAlign: 'center',
+    fontWeight: '500',
   },
 });
 

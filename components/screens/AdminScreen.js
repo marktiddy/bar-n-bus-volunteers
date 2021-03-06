@@ -63,7 +63,7 @@ const AdminScreen = ({ navigation }) => {
               </Text>
             </View>
           </TouchableOpacity>
-          <TouchableOpacity
+          {/* <TouchableOpacity
             onPress={() =>
               navigation.navigate('WebView', {
                 showUrl: 'http://barnbus.org.uk/mentor-attendance-form',
@@ -79,7 +79,7 @@ const AdminScreen = ({ navigation }) => {
                 sessions.
               </Text>
             </View>
-          </TouchableOpacity>
+          </TouchableOpacity> */}
           <TouchableOpacity
             onPress={() =>
               navigation.navigate('WebView', {
@@ -87,7 +87,7 @@ const AdminScreen = ({ navigation }) => {
               })
             }
           >
-            <View style={styles.messageView}>
+            <View style={[styles.messageView, styles.blue]}>
               <Text style={styles.messageText}>Newsletter Sign Up</Text>
               <Text style={styles.subtitle}>
                 Click here to sign up to our newsletter or get your friends and

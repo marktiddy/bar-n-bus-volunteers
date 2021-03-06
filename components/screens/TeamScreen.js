@@ -18,6 +18,7 @@ import bg from '../../assets/bg.jpg';
 import jamie from '../../assets/team/jamie.jpg';
 import aaron from '../../assets/team/aaron.jpg';
 import armand from '../../assets/team/armand.jpeg';
+import zahna from '../../assets/team/zahna.jpg';
 import avatar from '../../assets/team/avatar.png';
 import TeamCard from '../TeamCard';
 
@@ -57,9 +58,16 @@ const TeamScreen = ({ navigation }) => {
           <TeamCard
             image={armand}
             name="Armand Kitoko"
-            email="armandkikoto@barnbus.org.uk"
+            email="armandkitoko@barnbus.org.uk"
             tel="07999 018 710"
             role="Area Youth Development Worker, Basildon"
+          />
+          <TeamCard
+            image={zahna}
+            name="Zahna Hull"
+            email="zahnahull@barnbus.org.uk"
+            tel="07511 414 121"
+            role="Area Youth Development Worker, Leigh/Westcliff"
           />
           <TeamCard
             image={avatar}
