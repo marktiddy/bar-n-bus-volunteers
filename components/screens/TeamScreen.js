@@ -69,13 +69,6 @@ const TeamScreen = ({ navigation }) => {
             tel="07511 414 121"
             role="Youth Development Worker"
           />
-          <TeamCard
-            image={avatar}
-            name="Kim Radford"
-            email="kimradford@barnbus.org.uk"
-            tel=" 07930 649 118"
-            role="Mentoring Co-ordinator"
-          />
         </ScrollView>
       </ImageBackground>
     </>
