@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   View,
   StyleSheet,
@@ -8,19 +8,19 @@ import {
   Image,
   ImageBackground,
   TouchableOpacity,
-} from 'react-native';
-import { AntDesign } from '@expo/vector-icons';
+} from "react-native";
+import { AntDesign } from "@expo/vector-icons";
 
-import * as Device from 'expo-device';
+import * as Device from "expo-device";
 //Images
-import Logo from '../../assets/logo.png';
-import bg from '../../assets/bg.jpg';
-import jamie from '../../assets/team/jamie.jpg';
-import aaron from '../../assets/team/aaron.jpg';
-import armand from '../../assets/team/armand.jpeg';
-import zahna from '../../assets/team/zahna.jpg';
-import avatar from '../../assets/team/avatar.png';
-import TeamCard from '../TeamCard';
+import Logo from "../../assets/logo.png";
+import bg from "../../assets/bg.jpg";
+import jamie from "../../assets/team/jamie.jpg";
+import aaron from "../../assets/team/aaron.jpg";
+import armand from "../../assets/team/armand.jpeg";
+import zahna from "../../assets/team/zahna.jpg";
+import avatar from "../../assets/team/avatar.png";
+import TeamCard from "../TeamCard";
 
 const TeamScreen = ({ navigation }) => {
   const os = Device.osName;
@@ -28,7 +28,7 @@ const TeamScreen = ({ navigation }) => {
   return (
     <>
       <StatusBar
-        barStyle={`${os === 'Android' ? 'light-content' : 'dark-content'}`}
+        barStyle={`${os === "Android" ? "light-content" : "dark-content"}`}
       />
       <View style={styles.title}>
         <Image source={Logo} style={styles.topImg} />
@@ -50,8 +50,8 @@ const TeamScreen = ({ navigation }) => {
           />
           <TeamCard
             image={aaron}
-            name="Aaron Watts"
-            email="aaronwatts@barnbus.org.uk"
+            name="Gareth Williamson"
+            email="garethwilliamson@barnbus.org.uk"
             tel="07935 222 112"
             role="Area Youth Development Worker, Castle Point and Rochford"
           />
@@ -67,7 +67,7 @@ const TeamScreen = ({ navigation }) => {
             name="Zahna Hull"
             email="zahnahull@barnbus.org.uk"
             tel="07511 414 121"
-            role="Area Youth Development Worker, Leigh/Westcliff"
+            role="Youth Development Worker"
           />
           <TeamCard
             image={avatar}
@@ -88,16 +88,16 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 0.8,
-    color: 'white',
-    justifyContent: 'center',
-    alignContent: 'center',
+    color: "white",
+    justifyContent: "center",
+    alignContent: "center",
   },
   title: {
     flex: 0.15,
-    width: '100%',
-    alignContent: 'center',
-    justifyContent: 'flex-end',
-    backgroundColor: 'white',
+    width: "100%",
+    alignContent: "center",
+    justifyContent: "flex-end",
+    backgroundColor: "white",
   },
   topImg: {
     height: undefined,
@@ -107,21 +107,21 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   messageView: {
-    backgroundColor: '#4b4385',
-    color: 'white',
+    backgroundColor: "#4b4385",
+    color: "white",
     padding: 7,
     marginTop: 15,
     marginHorizontal: 15,
     borderRadius: 5,
     paddingVertical: 20,
     opacity: 0.95,
-    justifyContent: 'center',
+    justifyContent: "center",
   },
   messageText: {
-    color: 'white',
+    color: "white",
     fontSize: 18,
-    textAlign: 'center',
-    fontWeight: '300',
+    textAlign: "center",
+    fontWeight: "300",
   },
   bgImg: {
     flex: 1,

@@ -3,7 +3,7 @@
     "name": "Volunteer Hub",
     "slug": "bar-n-bus-volunteers",
     "platforms": ["ios", "android", "web"],
-    "version": "1.0.9",
+    "version": "1.0.10",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
     "splash": {
@@ -17,12 +17,12 @@
     "assetBundlePatterns": ["**/*", "./assets/*", "./node_modules/*"],
     "ios": {
       "bundleIdentifier": "com.mtmedia.barnbusvolunteers",
-      "buildNumber": "1.0.9",
+      "buildNumber": "1.0.10",
       "supportsTablet": true
     },
     "android": {
       "package": "com.mtmedia.barnbusvolunteers",
-      "versionCode": 17,
+      "versionCode": 18,
       "permissions": []
     }
   }
