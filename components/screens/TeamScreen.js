@@ -16,7 +16,7 @@ import * as Device from "expo-device";
 import Logo from "../../assets/logo.png";
 import bg from "../../assets/bg.jpg";
 import jamie from "../../assets/team/jamie.jpg";
-import aaron from "../../assets/team/aaron.jpg";
+import gareth from "../../assets/team/gareth.jpg";
 import armand from "../../assets/team/armand.jpeg";
 import zahna from "../../assets/team/zahna.jpg";
 import avatar from "../../assets/team/avatar.png";
@@ -49,7 +49,7 @@ const TeamScreen = ({ navigation }) => {
             role="CEO"
           />
           <TeamCard
-            image={aaron}
+            image={gareth}
             name="Gareth Williamson"
             email="garethwilliamson@barnbus.org.uk"
             tel="07935 222 112"
