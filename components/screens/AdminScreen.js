@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   View,
   StyleSheet,
@@ -8,11 +8,11 @@ import {
   Image,
   ImageBackground,
   TouchableOpacity,
-} from 'react-native';
-import * as Device from 'expo-device';
+} from "react-native";
+import * as Device from "expo-device";
 //Images
-import Logo from '../../assets/logo.png';
-import bg from '../../assets/bg.jpg';
+import Logo from "../../assets/logo.png";
+import bg from "../../assets/bg.jpg";
 
 //Screen
 
@@ -21,7 +21,7 @@ const AdminScreen = ({ navigation }) => {
   return (
     <>
       <StatusBar
-        barStyle={`${os === 'Android' ? 'light-content' : 'dark-content'}`}
+        barStyle={`${os === "Android" ? "light-content" : "dark-content"}`}
       />
       <View style={styles.title}>
         <Image source={Logo} style={styles.topImg} />
@@ -35,8 +35,8 @@ const AdminScreen = ({ navigation }) => {
           </View>
           <TouchableOpacity
             onPress={() =>
-              navigation.navigate('WebView', {
-                showUrl: 'http://www.barnbus.org.uk/session-evaluation-form',
+              navigation.navigate("WebView", {
+                showUrl: "http://www.barnbus.org.uk/session-evaluation-form",
               })
             }
           >
@@ -50,8 +50,8 @@ const AdminScreen = ({ navigation }) => {
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() =>
-              navigation.navigate('WebView', {
-                showUrl: 'http://barnbus.org.uk/team-accident-form',
+              navigation.navigate("WebView", {
+                showUrl: "http://barnbus.org.uk/team-accident-form",
               })
             }
           >
@@ -60,6 +60,48 @@ const AdminScreen = ({ navigation }) => {
               <Text style={styles.subtitle}>
                 Use this form to log any accidents or near misses during a youth
                 work session.
+              </Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate("WebView", {
+                showUrl: "http://barnbus.org.uk/pre-use-vehicle",
+              })
+            }
+          >
+            <View style={[styles.messageView, styles.blue]}>
+              <Text style={styles.messageText}>Pre-use Vehicle Log</Text>
+              <Text style={styles.subtitle}>
+                Use this form to complete the pre-use vehicle log sheet.
+              </Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate("WebView", {
+                showUrl: "http://barnbus.org.uk/post-use-vehicle",
+              })
+            }
+          >
+            <View style={styles.messageView}>
+              <Text style={styles.messageText}>Post-use Vehicle Log</Text>
+              <Text style={styles.subtitle}>
+                Use this form to complete the post-use vehicle log sheet.
+              </Text>
+            </View>
+          </TouchableOpacity>
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate("WebView", {
+                showUrl: "http://barnbus.org.uk/weekly-vehicle-check",
+              })
+            }
+          >
+            <View style={[styles.messageView, styles.blue]}>
+              <Text style={styles.messageText}>Weekly Vehicle Check</Text>
+              <Text style={styles.subtitle}>
+                Use this form to complete the weekly vehicle check form.
               </Text>
             </View>
           </TouchableOpacity>
@@ -82,12 +124,12 @@ const AdminScreen = ({ navigation }) => {
           </TouchableOpacity> */}
           <TouchableOpacity
             onPress={() =>
-              navigation.navigate('WebView', {
-                showUrl: 'http://www.barnbus.org.uk/newsletter-signup',
+              navigation.navigate("WebView", {
+                showUrl: "http://www.barnbus.org.uk/newsletter-signup",
               })
             }
           >
-            <View style={[styles.messageView, styles.blue]}>
+            <View style={[styles.messageView]}>
               <Text style={styles.messageText}>Newsletter Sign Up</Text>
               <Text style={styles.subtitle}>
                 Click here to sign up to our newsletter or get your friends and
@@ -95,6 +137,7 @@ const AdminScreen = ({ navigation }) => {
               </Text>
             </View>
           </TouchableOpacity>
+          <View style={styles.spacer}></View>
         </ScrollView>
       </ImageBackground>
     </>
@@ -107,16 +150,16 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 0.8,
-    color: 'white',
-    justifyContent: 'center',
-    alignContent: 'center',
+    color: "white",
+    justifyContent: "center",
+    alignContent: "center",
   },
   title: {
     flex: 0.15,
-    width: '100%',
-    alignContent: 'center',
-    justifyContent: 'flex-end',
-    backgroundColor: 'white',
+    width: "100%",
+    alignContent: "center",
+    justifyContent: "flex-end",
+    backgroundColor: "white",
   },
   topImg: {
     height: undefined,
@@ -125,33 +168,37 @@ const styles = StyleSheet.create({
     marginHorizontal: 10,
     marginBottom: 10,
   },
+  spacer: {
+    height: 50,
+    paddingTop: 50,
+  },
   messageView: {
-    backgroundColor: '#4b4385',
-    color: 'white',
+    backgroundColor: "#4b4385",
+    color: "white",
     padding: 7,
     marginTop: 15,
     marginHorizontal: 15,
     borderRadius: 5,
     paddingVertical: 20,
     opacity: 0.95,
-    justifyContent: 'center',
+    justifyContent: "center",
   },
   messageText: {
-    color: 'white',
+    color: "white",
     fontSize: 18,
-    textAlign: 'center',
-    fontWeight: '300',
+    textAlign: "center",
+    fontWeight: "300",
   },
   subtitle: {
-    color: 'white',
+    color: "white",
     fontSize: 14,
-    textAlign: 'center',
-    fontWeight: '300',
+    textAlign: "center",
+    fontWeight: "300",
     paddingTop: 5,
-    fontStyle: 'italic',
+    fontStyle: "italic",
   },
   blue: {
-    backgroundColor: '#48a1d7',
+    backgroundColor: "#48a1d7",
   },
   bgImg: {
     flex: 1,

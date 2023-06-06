@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import {
   View,
   Text,
@@ -9,21 +9,20 @@ import {
   StatusBar,
   ScrollView,
   TouchableOpacity,
-} from 'react-native';
-import KeyboardSpacer from 'react-native-keyboard-spacer';
-import * as SecureStore from 'expo-secure-store';
-import { user } from '../../assets/keys';
-import * as Device from 'expo-device';
+} from "react-native";
+import KeyboardSpacer from "react-native-keyboard-spacer";
+import * as SecureStore from "expo-secure-store";
+import { user } from "../../assets/keys";
+import * as Device from "expo-device";
 
 //import images
-import Logo from '../../assets/logo.png';
-import bg from '../../assets/bg.jpg';
-console.log(user.password);
+import Logo from "../../assets/logo.png";
+import bg from "../../assets/bg.jpg";
 
 const SignInScreen = ({ validated }) => {
   //Set up state
-  const [username, setUsername] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
   const [usernameError, setUsernameError] = useState(false);
   const [passwordError, setPasswordError] = useState(false);
   const os = Device.osName;
@@ -34,8 +33,8 @@ const SignInScreen = ({ validated }) => {
 
     if (u == user.username && p.toUpperCase() == user.password) {
       //Store the logged in status
-      SecureStore.setItemAsync('logged_in', 'yes');
-      validated('WELCOME');
+      SecureStore.setItemAsync("logged_in", "yes");
+      validated("WELCOME");
 
       //Set the display to show welcome
     } else {
@@ -56,7 +55,7 @@ const SignInScreen = ({ validated }) => {
   return (
     <>
       <StatusBar
-        barStyle={os === 'Android' ? 'light-content' : 'dark-content'}
+        barStyle={os === "Android" ? "light-content" : "dark-content"}
       />
       <View style={styles.title}>
         <Image source={Logo} style={styles.topImg} />
@@ -113,33 +112,33 @@ const SignInScreen = ({ validated }) => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    color: 'white',
-    justifyContent: 'center',
-    alignContent: 'center',
+    color: "white",
+    justifyContent: "center",
+    alignContent: "center",
   },
   title: {
     flex: 0.15,
-    width: '100%',
-    alignContent: 'center',
-    justifyContent: 'flex-end',
-    backgroundColor: 'white',
+    width: "100%",
+    alignContent: "center",
+    justifyContent: "flex-end",
+    backgroundColor: "white",
   },
 
   messageView: {
     flex: 13,
-    backgroundColor: '#4b4385',
-    color: 'white',
+    backgroundColor: "#4b4385",
+    color: "white",
     padding: 7,
     margin: 15,
     borderRadius: 5,
     opacity: 0.95,
-    justifyContent: 'center',
+    justifyContent: "center",
   },
   messageText: {
-    color: 'white',
+    color: "white",
     fontSize: 18,
-    textAlign: 'center',
-    fontWeight: '300',
+    textAlign: "center",
+    fontWeight: "300",
   },
   padding: {
     height: 10,
@@ -148,11 +147,11 @@ const styles = StyleSheet.create({
     height: 350,
     marginTop: 40,
     padding: 20,
-    backgroundColor: '#48a1d7',
+    backgroundColor: "#48a1d7",
     opacity: 0.95,
     marginHorizontal: 15,
     marginBottom: 150,
-    justifyContent: 'center',
+    justifyContent: "center",
     borderRadius: 5,
   },
   bgImg: {
@@ -166,32 +165,32 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   label: {
-    color: 'white',
+    color: "white",
     fontSize: 18,
     padding: 5,
     marginTop: 10,
-    fontWeight: '300',
+    fontWeight: "300",
   },
   input: {
     borderWidth: 1,
-    borderColor: 'white',
+    borderColor: "white",
     fontSize: 18,
     padding: 5,
     marginVertical: 5,
-    color: 'white',
+    color: "white",
   },
   button: {
     marginTop: 20,
-    textAlign: 'center',
+    textAlign: "center",
     fontSize: 20,
-    fontWeight: '700',
-    backgroundColor: 'white',
+    fontWeight: "700",
+    backgroundColor: "white",
     borderRadius: 5,
     padding: 15,
-    color: '#48a1d7',
+    color: "#48a1d7",
   },
   error: {
-    color: 'red',
+    color: "red",
   },
 });
 
