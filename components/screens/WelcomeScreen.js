@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import {
   View,
   Text,
@@ -8,21 +8,20 @@ import {
   StatusBar,
   TouchableOpacity,
   ScrollView,
-  SafeAreaView,
-} from 'react-native';
-import * as Device from 'expo-device';
-import { Col, Row, Grid } from 'react-native-easy-grid';
+} from "react-native";
+import * as Device from "expo-device";
+import { Col, Grid } from "react-native-easy-grid";
 
 //Images
-import Logo from '../../assets/logo.png';
-import bg from '../../assets/bg.jpg';
+import Logo from "../../assets/logo.png";
+import bg from "../../assets/bg.jpg";
 
 const WelcomeScreen = ({ navigation }) => {
   const os = Device.osName;
   return (
     <>
       <StatusBar
-        barStyle={`${os === 'Android' ? 'light-content' : 'dark-content'}`}
+        barStyle={`${os === "Android" ? "light-content" : "dark-content"}`}
       />
       <View style={styles.title}>
         <Image source={Logo} style={styles.topImg} />
@@ -37,7 +36,7 @@ const WelcomeScreen = ({ navigation }) => {
 
           <Grid style={styles.grid}>
             <Col style={styles.col}>
-              <TouchableOpacity onPress={() => navigation.navigate('Admin')}>
+              <TouchableOpacity onPress={() => navigation.navigate("Admin")}>
                 <Text style={styles.messageText}>Administration</Text>
                 <Text style={styles.subtitle}>
                   Find evaluation forms, accident forms etc.
@@ -46,7 +45,7 @@ const WelcomeScreen = ({ navigation }) => {
             </Col>
             <Col style={[styles.col, styles.blue]}>
               <TouchableOpacity
-                onPress={() => navigation.navigate('Safeguarding')}
+                onPress={() => navigation.navigate("Safeguarding")}
               >
                 <Text style={styles.messageText}>Safeguarding</Text>
                 <Text style={styles.subtitle}>
@@ -58,7 +57,7 @@ const WelcomeScreen = ({ navigation }) => {
           </Grid>
           <Grid style={styles.grid}>
             <Col style={[styles.col, styles.blue]}>
-              <TouchableOpacity onPress={() => navigation.navigate('Team')}>
+              <TouchableOpacity onPress={() => navigation.navigate("Team")}>
                 <Text style={styles.messageText}>Team Contacts</Text>
                 <Text style={styles.subtitle}>
                   Details for contacting the Bar'N'Bus staff
@@ -67,7 +66,7 @@ const WelcomeScreen = ({ navigation }) => {
             </Col>
 
             <Col style={styles.col}>
-              <TouchableOpacity onPress={() => navigation.navigate('Links')}>
+              <TouchableOpacity onPress={() => navigation.navigate("Links")}>
                 <Text style={styles.messageText}>Useful Links</Text>
                 <Text style={styles.subtitle}>
                   Areas to develop your thinking
@@ -77,7 +76,7 @@ const WelcomeScreen = ({ navigation }) => {
           </Grid>
           <Grid style={styles.grid}>
             <Col style={[styles.col, styles.blue, styles.colSm]}>
-              <TouchableOpacity onPress={() => navigation.navigate('Training')}>
+              <TouchableOpacity onPress={() => navigation.navigate("Training")}>
                 <Text style={styles.messageText}>Upcoming Training</Text>
                 <Text style={styles.subtitle}>
                   Find out about our upcoming training sessions and book your
@@ -98,16 +97,16 @@ const styles = StyleSheet.create({
   },
   container: {
     flex: 0.8,
-    color: 'white',
-    justifyContent: 'center',
-    alignContent: 'center',
+    color: "white",
+    justifyContent: "center",
+    alignContent: "center",
   },
   title: {
     flex: 0.2,
-    width: '100%',
-    alignContent: 'center',
-    justifyContent: 'flex-end',
-    backgroundColor: 'white',
+    width: "100%",
+    alignContent: "center",
+    justifyContent: "flex-end",
+    backgroundColor: "white",
   },
   topImg: {
     height: undefined,
@@ -117,28 +116,28 @@ const styles = StyleSheet.create({
     marginBottom: 10,
   },
   messageView: {
-    backgroundColor: '#4b4385',
-    color: 'white',
+    backgroundColor: "#4b4385",
+    color: "white",
     padding: 7,
     margin: 15,
     borderRadius: 5,
     paddingVertical: 20,
     opacity: 0.95,
-    justifyContent: 'center',
+    justifyContent: "center",
   },
   messageText: {
-    color: 'white',
+    color: "white",
     fontSize: 18,
-    textAlign: 'center',
-    fontWeight: '300',
+    textAlign: "center",
+    fontWeight: "300",
   },
   subtitle: {
-    color: 'white',
+    color: "white",
     fontSize: 14,
-    textAlign: 'center',
-    fontWeight: '300',
+    textAlign: "center",
+    fontWeight: "300",
     paddingTop: 5,
-    fontStyle: 'italic',
+    fontStyle: "italic",
   },
   padding: {
     height: 10,
@@ -147,13 +146,13 @@ const styles = StyleSheet.create({
     flex: 1,
   },
   col: {
-    backgroundColor: '#4b4385',
-    color: 'white',
+    backgroundColor: "#4b4385",
+    color: "white",
     marginHorizontal: 15,
     borderRadius: 5,
     padding: 5,
-    alignContent: 'center',
-    justifyContent: 'center',
+    alignContent: "center",
+    justifyContent: "center",
     marginBottom: 20,
     height: 150,
   },
@@ -161,7 +160,7 @@ const styles = StyleSheet.create({
     height: 100,
   },
   blue: {
-    backgroundColor: '#48a1d7',
+    backgroundColor: "#48a1d7",
   },
 });
 

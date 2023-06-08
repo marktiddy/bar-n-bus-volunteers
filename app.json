@@ -2,36 +2,31 @@
   "expo": {
     "name": "Volunteer Hub",
     "slug": "bar-n-bus-volunteers",
-    "platforms": [
-      "ios",
-      "android",
-      "web"
-    ],
     "version": "1.0.12",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
+    "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": [
-      "**/*",
-      "./assets/*",
-      "./node_modules/*"
-    ],
+    "assetBundlePatterns": ["**/*"],
     "ios": {
       "bundleIdentifier": "com.mtmedia.barnbusvolunteers",
       "buildNumber": "1.0.12",
       "supportsTablet": true
     },
     "android": {
-      "package": "com.mtmedia.barnbusvolunteers",
-      "versionCode": 20,
-      "permissions": []
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#ffffff",
+        "versionCode": 20,
+        "permissions": []
+      }
+    },
+    "web": {
+      "favicon": "./assets/favicon.png"
     },
     "extra": {
       "eas": {
