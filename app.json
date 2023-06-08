@@ -11,7 +11,7 @@
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
-    "assetBundlePatterns": ["**/*"],
+    "assetBundlePatterns": ["**/*", "./assets/*", ".node_modules/*"],
     "ios": {
       "bundleIdentifier": "com.mtmedia.barnbusvolunteers",
       "buildNumber": "1.0.12",
@@ -20,10 +20,11 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff",
-        "versionCode": 20,
-        "permissions": []
-      }
+        "backgroundColor": "#ffffff"
+      },
+      "versionCode": 20,
+      "permissions": [],
+      "package": "com.mtmedia.barnbusvolunteers"
     },
     "web": {
       "favicon": "./assets/favicon.png"
