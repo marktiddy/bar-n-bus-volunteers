@@ -1,8 +1,10 @@
+import "react-native-gesture-handler";
 import React, { useState, useEffect } from "react";
-import { StyleSheet, StatusBar } from "react-native";
+import { StatusBar } from "react-native";
 import * as SecureStore from "expo-secure-store";
 import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
+import * as Sentry from "sentry-expo";
 
 //Import our components
 import SignInScreen from "./components/screens/SignInScreen";
@@ -14,11 +16,17 @@ import TrainingScreen from "./components/screens/TrainingScreen";
 import LinkScreen from "./components/screens/LinkScreen";
 import TeamScreen from "./components/screens/TeamScreen";
 
+Sentry.init({
+  dsn: "https://f75e45fb33174107b175222e46b1d26a@o407062.ingest.sentry.io/4505334164488192",
+  enableInExpoDevelopment: true,
+  debug: true, // If `true`, Sentry will try to print out useful debugging information if something goes wrong with sending the event. Set it to `false` in production
+});
+
 //Create our stack
 const Stack = createStackNavigator();
 
 //Create our main component
-const App = ({ navigation }) => {
+const App = () => {
   const [screen, setScreen] = useState("LOGIN");
 
   //Check if a user is logged in
@@ -80,14 +88,5 @@ const App = ({ navigation }) => {
     </NavigationContainer>
   );
 };
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: "#fff",
-    alignItems: "center",
-    justifyContent: "center",
-  },
-});
 
 export default App;
