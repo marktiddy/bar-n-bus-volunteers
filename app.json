@@ -20,9 +20,9 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff",
-        "versionCode": 20
+        "backgroundColor": "#ffffff"
       },
+      "versionCode": 20,
       "package": "com.mtmedia.barnbusvolunteers"
     },
     "web": {
